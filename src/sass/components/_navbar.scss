@@ -1,0 +1,49 @@
+@use "../tools/mixins" as navbar;
+@use "../base/variables" as variable;
+
+.Navbar {
+  background-color: map-get(variable.$colors, "light");
+  height: 4.375rem;
+  @include navbar.flex(space-between, center);
+  padding: 0 .9375rem 0 .9375rem;
+  box-shadow:  5px 5px 14px map-get(variable.$colors, "black-primary" ),
+             -5px -5px 14px map-get(variable.$colors, "light" );
+  &-links {
+    @include navbar.flex(flex-start, center);
+    gap: 0.625rem;
+    color: map-get(variable.$colors, "black-primary" );
+    font-family: map-get(variable.$fonts, "subtitle" );
+    font-size: 1.25em;
+  }
+  
+  &-link:hover {
+    color: map-get(variable.$colors, "secondary" );
+  }
+
+  &-logo {
+    width: 7.5rem;
+  }
+  
+  &-login {
+    @include navbar.flex;
+    gap: 1.875rem;
+  }
+  
+  &-user{
+    @include navbar.flex;
+    gap: .625rem;
+  }
+  
+  &-h {
+    color: map-get(variable.$colors, "black-primary" );
+    font-family: map-get(variable.$fonts, "subtitle" );
+    font-size: 1em;
+
+  }
+
+  &-img{
+    height: 3.125rem;
+    width: 3.125rem;
+    border-radius: 50%;
+  }
+}

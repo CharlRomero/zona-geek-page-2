@@ -1,0 +1,7 @@
+@use "../tools/mixins" as itemgrid;
+@use "../base/variables" as variable;
+
+.ItemGrid{
+    @include itemgrid.grid(20rem, 1.125rem, center);
+    padding-top: 1.25rem;
+}

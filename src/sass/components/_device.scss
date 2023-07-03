@@ -1,0 +1,44 @@
+@use "../tools/mixins" as device;
+@use "../base/variables" as variable;
+
+.Device {
+  @include device.flex(space-evenly);
+  height: 31.25rem;
+  padding-top: 1.25rem;
+
+  &-description {
+    @include device.flex(center, flex-start, column);
+    gap: 2.1875rem;
+    line-height: 1;
+  }
+
+  &-h2 {
+    color: map-get(variable.$colors, "primary");
+    font-size: 4.375em;
+    width: 370px;
+    line-height: 1;
+  }
+
+  &-image {
+    &--img {
+      width: 34.375rem;
+      height: 34.375rem;
+    }
+  }
+
+  &-info {
+    @include device.flex(center, flex-start, column);
+    gap: 1.25rem;
+  }
+
+  &-h3 {
+    color: map-get(variable.$colors, "light");
+    font-weight: lighter;
+  }
+
+  &-span {
+    color: map-get(variable.$colors, "secondary");
+    font-size: 3.4375em;
+    font-weight: 550;
+  }
+}
